@@ -671,7 +671,7 @@ int32_t Recorder::RecorderImpl::Prepare()
         MEDIA_ERR_LOG("PrepareAudioSource  failed Ret: %d", ret);
         return ret;
     }
-    status_ = PREPPARED;
+    status_ = PREPARED;
     MEDIA_INFO_LOG("Prepare SUCCESS");
     return SUCCESS;
 }
@@ -842,7 +842,7 @@ int32_t Recorder::RecorderImpl::StopVideoSource()
 int32_t Recorder::RecorderImpl::Start()
 {
     std::lock_guard<std::mutex> lock(mutex_);
-    if (status_ != PREPPARED &&
+    if (status_ != PREPARED &&
         status_ != PAUSED &&
         status_ != STOPPED) {
         MEDIA_ERR_LOG("Start ILLEGAL_STATE  status:%u", status_);
@@ -1046,7 +1046,7 @@ int32_t Recorder::RecorderImpl::Reset()
         MEDIA_ERR_LOG(" ResetConfig err:0x%x", ret);
         return ret;
     }
-    status_ = RESETED;
+    status_ = RESETTING;
     MEDIA_INFO_LOG("Reset Recorder SUCCESS");
     return SUCCESS;
 }

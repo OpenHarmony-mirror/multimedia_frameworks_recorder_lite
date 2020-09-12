@@ -33,7 +33,7 @@ namespace Media {
 using OHOS::Surface;
 using OHOS::SurfaceBuffer;
 using OHOS::IBufferConsumerListener;
-class RecorderVideoSource : public RecorderSource, IBufferConsumerListener {
+class RecorderVideoSource : public RecorderSource, public IBufferConsumerListener {
 public:
 
     RecorderVideoSource();
@@ -53,7 +53,7 @@ public:
 
     virtual int32_t Release() override;
 
-    void OnBufferAvailable() override;
+    virtual void OnBufferAvailable() override;
 private:
     std::shared_ptr<Surface> surface_;
     std::mutex lock_;

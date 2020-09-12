@@ -28,10 +28,10 @@ constexpr uint32_t RECORDER_SOURCE_MAX_CNT = 4;
 
 enum RecState {
     INITIALIZED,
-    PREPPARED,
+    PREPARED,
     RECORDING,
     PAUSED,
-    RESETED,
+    RESETTING,
     STOPPED,
     RELEASED
 };
