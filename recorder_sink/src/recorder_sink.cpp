@@ -60,7 +60,7 @@ int32_t RecorderSink::CheckStarted() const
     return SUCCESS;
 }
 
-int32_t RecorderSink::SetOutputPath(const string &path)
+int32_t RecorderSink::SetOutputPath(const std::string &path)
 {
     path_ = path;
     return SUCCESS;
@@ -176,7 +176,7 @@ int32_t RecorderSink::SetMaxFileSize(int64_t size)
     return SUCCESS;
 }
 
-int32_t RecorderSink::SetOrientationHint(int degrees)
+int32_t RecorderSink::SetOrientationHint(int32_t degrees)
 {
     if (CheckPrepared() != SUCCESS) {
         return ERR_ILLEGAL_STATE;
@@ -184,7 +184,7 @@ int32_t RecorderSink::SetOrientationHint(int degrees)
     return FormatMuxerSetOrientation(formatMuxerHandle_, degrees);
 }
 
-int32_t RecorderSink::SetLocation(int latitude, int longitude)
+int32_t RecorderSink::SetLocation(int32_t latitude, int32_t longitude)
 {
     if (CheckPrepared() != SUCCESS) {
         return ERR_ILLEGAL_STATE;

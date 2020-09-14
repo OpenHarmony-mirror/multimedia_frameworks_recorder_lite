@@ -95,7 +95,7 @@ int32_t Recorder::SetOutputFormat(OutputFormatType format)
     return impl_->SetOutputFormat(format);
 }
 
-int32_t Recorder::SetOutputPath(const string &path)
+int32_t Recorder::SetOutputPath(const std::string &path)
 {
     return impl_->SetOutputPath(path);
 }

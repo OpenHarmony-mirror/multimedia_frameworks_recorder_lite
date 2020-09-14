@@ -413,7 +413,7 @@ int32_t Recorder::RecorderImpl::SetOutputFormat(OutputFormatType format)
     return recorderSink_->SetOutputFormat(outPutFormat);
 }
 
-int32_t Recorder::RecorderImpl::SetOutputPath(const string &path)
+int32_t Recorder::RecorderImpl::SetOutputPath(const std::string &path)
 {
     std::lock_guard<std::mutex> lock(mutex_);
     CHECK_MEMBER_PTR_RETURN(recorderSink_);
