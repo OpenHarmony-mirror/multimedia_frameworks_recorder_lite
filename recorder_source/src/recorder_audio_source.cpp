@@ -22,7 +22,7 @@ namespace OHOS {
 namespace Media {
 namespace {
 constexpr int64_t AUDIO_SOURCE_TIME_US_S = 1000000ULL;   /* us to s */
-constexpr int64_t AUDIO_SOURCE_TIME_NS_US = 1000ULL;     /* ns  to us  */
+constexpr int64_t AUDIO_SOURCE_TIME_NS_US = 1000ULL;     /* ns to us */
 }
 
 RecorderAudioSource::RecorderAudioSource()
@@ -80,17 +80,17 @@ int32_t RecorderAudioSource::Start()
     return SUCCESS;
 }
 
-static int32_t Int64Multiple(int64_t firstNumber, int64_t secondNumner, int64_t &result)
+static int32_t Int64Multiple(int64_t firstNumber, int64_t secondNumber, int64_t &result)
 {
-    if (secondNumner == 0) {
+    if (secondNumber == 0) {
         result = 0;
         return SUCCESS;
     }
 
-    if (firstNumber > (INT64_MAX / secondNumner)) {
+    if (firstNumber > (INT64_MAX / secondNumber)) {
         return ERR_INVALID_OPERATION;
     }
-    result = firstNumber * secondNumner;
+    result = firstNumber * secondNumber;
     return SUCCESS;
 }
 
