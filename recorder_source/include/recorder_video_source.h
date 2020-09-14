@@ -15,6 +15,7 @@
 
 #ifndef RECORDER_VIDEO_SOURCE_H
 #define RECORDER_VIDEO_SOURCE_H
+
 #include "recorder_source.h"
 #include <memory>
 #include <map>
@@ -33,6 +34,7 @@ namespace Media {
 using OHOS::Surface;
 using OHOS::SurfaceBuffer;
 using OHOS::IBufferConsumerListener;
+
 class RecorderVideoSource : public RecorderSource, public IBufferConsumerListener {
 public:
 
@@ -54,6 +56,7 @@ public:
     virtual int32_t Release() override;
 
     virtual void OnBufferAvailable() override;
+
 private:
     std::shared_ptr<Surface> surface_;
     std::mutex lock_;
@@ -61,7 +64,7 @@ private:
     int32_t frameAvailableCount_;
     std::vector<SurfaceBuffer*> acquiredBuffers;
     SurfaceBuffer *acquireBuffer_;
-    bool  started_;
+    bool started_;
 };
 }  // namespace Media
 }  // namespace OHOS

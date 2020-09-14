@@ -15,6 +15,7 @@
 
 #ifndef RECORDER_AUDIO_SOURCE_H
 #define RECORDER_AUDIO_SOURCE_H
+
 #include <memory>
 #include <map>
 #include <string>
@@ -23,9 +24,11 @@
 #include "media_info.h"
 #include "recorder_source.h"
 #include "audio_capturer.h"
+
 namespace OHOS {
 namespace Media {
 using namespace OHOS::Audio;
+
 class RecorderAudioSource : public RecorderSource {
 public:
 
