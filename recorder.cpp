@@ -40,6 +40,7 @@ int32_t Recorder::SetVideoSize(int32_t sourceId, int32_t width, int32_t height)
 {
     return impl_->SetVideoSize(sourceId, width, height);
 }
+
 int32_t Recorder::SetVideoFrameRate(int32_t sourceId, int32_t frameRate)
 {
     return impl_->SetVideoFrameRate(sourceId, frameRate);

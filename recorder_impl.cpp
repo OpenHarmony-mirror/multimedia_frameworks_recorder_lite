@@ -200,6 +200,7 @@ int32_t Recorder::RecorderImpl::SetVideoSize(int32_t sourceId, int32_t width, in
     MEDIA_INFO_LOG("Video Size width:%d height:%d", width, height);
     return SUCCESS;
 }
+
 int32_t Recorder::RecorderImpl::SetVideoFrameRate(int32_t sourceId, int32_t frameRate)
 {
     std::lock_guard<std::mutex> lock(mutex_);
@@ -799,7 +800,6 @@ void VideoSourceProcess(const SourceManager *videoSourceManager, const RecorderS
     }
     MEDIA_INFO_LOG("videoSourceManager:%p over", videoSourceManager);
 }
-
 
 int32_t Recorder::RecorderImpl::StartVideoSource()
 {
